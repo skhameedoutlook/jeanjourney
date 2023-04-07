@@ -5,15 +5,10 @@ const OrderSchema = new mongoose.Schema({
 	products: [{
 		productId: { type: String },
 		quantity: { type: Number, default: 1 },
+		pricePerItem: { type: Number, required: true },
 	}],
-	amount: { type: Number, required: true },
-	address: [
-		lineOne: { type: String, required: true },
-		lineTwo: { type: String, required: false },
-		state: { type: String, required: true },
-		country: { type: String, required: true, default: "India" },
-		pincode: { type: String, required: true },
-	],
+	totalAmount: { type: Number, required: true },
+	address: { type: String, required: true },
 	status: { type: String, default: "pending" }
 }, { timestamps: true });
 
