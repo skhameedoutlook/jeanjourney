@@ -3,6 +3,9 @@ const cryptojs = require("crypto-js");
 const { verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
 const User = require("../models/User");
 
+router.get("/testpath", (req, res) => {
+	res.status(200).json("DONE");
+})
 
 router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
 	if(req.body.password) {
