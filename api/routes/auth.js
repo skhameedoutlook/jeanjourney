@@ -47,9 +47,10 @@ router.post("/login", async (req, res) => {
 			res.status(401).json("Wrong password");
 			return;
 		}
-			
-		user.password = "hidden";
-		res.status(200).json(user);
+		
+		const { password, ...userVisibleDetails } = user._doc;
+
+		res.status(200).json(userVisibleDetails);
 	} catch(err) {
 		res.status(500).json(err);
 	}
