@@ -1,12 +1,23 @@
-const router = require("express").Router()
+const router = require("express").Router();
+const cryptojs = require("crypto-js");
+const { verifyTokenAndAuthorization } = require("./verifyToken");
+const User = require("../models/User");
 
-router.get("/usertest", (req, res) => {
-	res.send("hit GET /usertest")
-});
 
-router.post("/userposttest", (req, res) => {
-	const username = req.body.username;
-	console.log(username);
+router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
+	if(req.body.password) {
+		req.body.password = cryptojs.SHA3(req.body.password).toString();
+	}
+	console.log(":id here");
+	try {
+		const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+			$set: req.body
+		}, { new: true });
+		console.log("Updated user");
+		res.status(200).json(updatedUser);
+	} catch(err) {
+		res.status(500).json(err);
+	}
 });
 
 module.exports = router;
