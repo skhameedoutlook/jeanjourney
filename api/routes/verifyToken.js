@@ -29,4 +29,18 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 	});
 }
 
-module.exports = { verifyTokenAndAuthorization };
+const verifyTokenAndAdmin = (req, res, next) => {
+	verifyToken(req, res, () => {
+		if(req.user.isAdmin) {
+			if(req.user.id == req.params.id) {
+				res.status(403).json("You cannot delete yourself");
+			} else {
+				next();
+			}
+		} else {
+			res.status(403).json("Not an admin");
+		}
+	});	
+}
+
+module.exports = { verifyTokenAndAuthorization, verifyTokenAndAdmin };
