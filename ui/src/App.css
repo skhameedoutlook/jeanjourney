@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.first-nav {
+  background: rgba(0,21,57,1);
+}
+
+.nav-link-color {
+  color: #fff;
+}
+
+.main-logo {
+  width: 231px;
+  height: 55px;
+}
