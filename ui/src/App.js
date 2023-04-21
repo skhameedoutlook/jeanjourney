@@ -4,38 +4,44 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import mainLogo from "./logo_white.png.webp"
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 function App() {
   return (
     <div className="App">
-      <nav className="navbar navbar-expand-md first-nav">
+      <nav className="navbar navbar-expand-lg first-nav">
         <div className="container-fluid">
-          <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul className="navbar-nav me-auto">
-              <li className="nav-item active">
-                  <a className="nav-link" href="#">
-                    <img src={mainLogo} alt={"Logo"} className="main-logo" />
-                  </a>
+          <a className="navbar-brand" href="#">
+            <img src={mainLogo} alt={"Jean Journey"} className="main-logo" />
+          </a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link nav-link-color" aria-current="page" href="#">REGISTER/LOGIN</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link nav-link-color" aria-current="page" href="#">
+                  <i class="bi bi-heart"></i>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link nav-link-color" aria-current="page" href="#">
+                  <i class="bi bi-cart2"></i>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link nav-link-color disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
-          </div>
-          <div className="mx-auto order-0">
-            <a className="navbar-brand mx-auto nav-link-color" href="#">LOGIN/REGISTER</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
-                <span className="navbar-toggler-icon nav-link-color">
-                  <i class="bi bi-list"></i>
-                </span>
-            </button>
-          </div>
-          <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                    <a className="nav-link nav-link-color" href="#"><i className="bi bi-heart"></i></a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link nav-link-color" href="#"><i className="bi bi-cart"></i></a>
-                </li>
-            </ul>
+            <form className="d-flex">
+              <input className="form-control right-0 right-border-0" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn btn-danger left-border-0" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </form>
           </div>
         </div>
       </nav>

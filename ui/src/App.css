@@ -51,6 +51,20 @@
   height: 55px;
 }
 
-.main-search {
-  display: inline;
+.right-0 {
+  margin-right: 0px;
+}
+
+.left-0 {
+  margin-left: 0px;
+}
+
+.right-border-0 {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.left-border-0 {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
