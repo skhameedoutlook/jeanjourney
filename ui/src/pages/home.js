@@ -16,10 +16,12 @@ export default function Home() {
 			setProducts(displayList);
 		}).catch(err => console.log(err));
 	}, []);
+	return (<div></div>);
 	return (
 		<div>
+			<h3>Jean Journey</h3>
 			Top Products
 			&nbsp; { products }
 		</div>
-	)
+	);
 }

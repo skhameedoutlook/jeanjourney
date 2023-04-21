@@ -50,3 +50,7 @@
   width: 231px;
   height: 55px;
 }
+
+.main-search {
+  display: inline;
+}
